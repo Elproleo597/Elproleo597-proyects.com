@@ -1,57 +1,1230 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Other proyects</title>
-<link rel="stylesheet" href="css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="img/s.webp">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Other Projects | Elproleo597</title>
+
+    <link rel="icon" href="img/s.webp">
+
+    <style>
+
+        /* =====================================
+           SCRATCH COLORS
+        ====================================== */
+
+        :root {
+
+            --scratch-orange: #f9a83a;
+            --scratch-orange-dark: #e89424;
+
+            --scratch-blue: #4c97ff;
+            --scratch-blue-dark: #3373cc;
+
+            --green: #59c059;
+            --green-dark: #3d963d;
+
+            --purple: #8e44ad;
+            --purple-dark: #6c3483;
+
+            --background: #f4f4f4;
+
+            --white: #ffffff;
+
+            --text: #333333;
+            --text-light: #666666;
+
+        }
+
+
+        /* =====================================
+           GENERAL
+        ====================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f7f7,
+                    #eeeeee
+                );
+
+            color:
+                var(--text);
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================
+           HEADER
+        ====================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--scratch-orange),
+                    var(--scratch-orange-dark)
+                );
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.2);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 12px 20px;
+
+        }
+
+
+        /* =====================================
+           LOGO
+        ====================================== */
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: white;
+
+            text-shadow:
+                0 2px 2px
+                rgba(0,0,0,0.15);
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ====================================== */
+
+        .nav-links {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .nav-links a {
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 9px 12px;
+
+            border-radius: 8px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            background:
+                rgba(255,255,255,0.25);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================
+           MAIN
+        ====================================== */
+
+        main {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 55px 20px;
+
+        }
+
+
+        /* =====================================
+           HERO
+        ====================================== */
+
+        .hero {
+
+            padding: 50px 35px;
+
+            background:
+                white;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            border-bottom:
+                7px solid
+                var(--scratch-blue);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .hero-icon {
+
+            font-size: 75px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(42px, 7vw, 70px);
+
+            line-height: 1;
+
+            color:
+                var(--scratch-blue);
+
+            text-shadow:
+                0 3px 0
+                var(--scratch-blue-dark);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero p {
+
+            max-width: 700px;
+
+            margin:
+                auto;
+
+            color:
+                var(--text-light);
+
+            font-size: 19px;
+
+        }
+
+
+        /* =====================================
+           SECTION TITLE
+        ====================================== */
+
+        .projects-title {
+
+            text-align: center;
+
+            margin-top: 55px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .projects-title h2 {
+
+            font-size: 35px;
+
+            color:
+                var(--scratch-orange-dark);
+
+        }
+
+
+        .projects-title p {
+
+            color:
+                var(--text-light);
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           PROJECT GRID
+        ====================================== */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        /* =====================================
+           PROJECT CARD
+        ====================================== */
+
+        .project-card {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border-left:
+                6px solid
+                var(--scratch-blue);
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .project-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 11px 24px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .project-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .project-card h3 {
+
+            color:
+                var(--scratch-blue-dark);
+
+            font-size: 20px;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        /* =====================================
+           PLAY BUTTON
+        ====================================== */
+
+        .play-button {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition: 0.15s;
+
+        }
+
+
+        .play-button:hover {
+
+            background:
+                #5fa4ff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .play-button:active {
+
+            transform:
+                translateY(2px);
+
+            box-shadow:
+                0 2px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        /* =====================================
+           STUDIOS
+        ====================================== */
+
+        .studios {
+
+            margin-top: 55px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .studio {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            border-top:
+                6px solid
+                var(--scratch-orange);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .studio:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .studio h2 {
+
+            color:
+                var(--scratch-orange-dark);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .studio img {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            border-radius: 12px;
+
+            border:
+                4px solid
+                var(--scratch-blue);
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .studio img:hover {
+
+            transform:
+                scale(1.03);
+
+        }
+
+
+        .studio p {
+
+            color:
+                var(--text-light);
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .studio-button {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition: 0.15s;
+
+        }
+
+
+        .studio-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            background:
+                #5fa4ff;
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ====================================== */
+
+        footer {
+
+            margin-top: 40px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                #e8e8e8;
+
+            border-top:
+                4px solid
+                var(--scratch-orange);
+
+            color:
+                #666666;
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .projects {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+
+                gap: 2px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+
+            }
+
+
+            .projects {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    35px 20px;
+
+            }
+
+
+            main {
+
+                padding:
+                    40px 15px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="Lomasnuevo.html">The newest</a></li>
-<li><a href="LaInvasionZOMBIE.html">The ZOMBIE Invasion</a></li>
-<li><a href="EATPIZZAMAN.html">EATPIZZA-MAN</a></li>
-<li><a href="Historias.html">Stories</a></li>
-<li><a href="Otrosproyectos.html">Other proyects</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>Other Proyects</h1>
-<a href=https://scratch.mit.edu/projects/1365134502/>Backrooms 3D 1.1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1352548157/>3D in Scratch</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1273855220>99 nights in the forest</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1260172949>FNAIO 2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1205413810>Backrooms 3D 1.0</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1055642294>FNAIO</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1044562784>Flappy Birdcho</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1051531105>FNAF 2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1051113529>Soccer/Futbol remix</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1022513053>Snake</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1000885395>T-REX</a>
-<p></p>
-<a href=https://scratch.mit.edu/studios/35249906>
- <img src="img/OP.PNG" alt="imagen principal">
-</a>
-<p>Official Studio</p>
-<p></p>
-<a href=https://scratch.mit.edu/studios/35213080>
- <img src="img/CapturaOPO.PNG" alt="imgXDDDD">
-</a>
-<p>Estudio en español</p>
-</main>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🎮 Elproleo597
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Lomasnuevo.html">
+                        The newest
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LaInvasionZOMBIE.html">
+                        🧟 ZOMBIE Invasion
+                    </a>
+                </li>
+
+                <li>
+                    <a href="EATPIZZAMAN.html">
+                        🍕 EATPIZZA-MAN
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Historias.html">
+                        📖 Stories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Otrosproyectos.html">
+                        🎮 Other projects
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-icon">
+                🎮
+            </div>
+
+
+            <h1>
+                Other Projects
+            </h1>
+
+
+            <p>
+
+                Explore some of my other Scratch
+                projects! From 3D games and horror
+                games to classic arcade games.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- TITLE -->
+
+        <section class="projects-title">
+
+            <h2>
+                🕹️ My Other Projects
+            </h2>
+
+
+            <p>
+                Choose a project and start playing!
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             PROJECTS
+        ================================== -->
+
+        <section class="projects">
+
+
+            <!-- BACKROOMS 3D 1.1 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🚪
+                </div>
+
+                <h3>
+                    Backrooms 3D 1.1
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1365134502/"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 3D IN SCRATCH -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🧊
+                </div>
+
+                <h3>
+                    3D in Scratch
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1352548157/"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 99 NIGHTS -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🌲
+                </div>
+
+                <h3>
+                    99 Nights in the Forest
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1273855220"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- FNAIO 2 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    👻
+                </div>
+
+                <h3>
+                    FNAIO 2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1260172949"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- BACKROOMS 3D 1.0 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🚪
+                </div>
+
+                <h3>
+                    Backrooms 3D 1.0
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1205413810"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- FNAIO -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    👻
+                </div>
+
+                <h3>
+                    FNAIO
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1055642294"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- FLAPPY BIRDCHO -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🐦
+                </div>
+
+                <h3>
+                    Flappy Birdcho
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1044562784"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- FNAF 2 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🐻
+                </div>
+
+                <h3>
+                    FNAF 2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1051531105"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SOCCER -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    ⚽
+                </div>
+
+                <h3>
+                    Soccer / Futbol Remix
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1051113529"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SNAKE -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Snake
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1022513053"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- T-REX -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    🦖
+                </div>
+
+                <h3>
+                    T-REX
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1000885395"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STUDIOS
+        ================================== -->
+
+        <section class="projects-title">
+
+            <h2>
+                ⭐ Scratch Studios
+            </h2>
+
+
+            <p>
+                Check out the studios for more projects.
+            </p>
+
+        </section>
+
+
+
+        <section class="studios">
+
+
+            <!-- OFFICIAL STUDIO -->
+
+            <article class="studio">
+
+                <h2>
+                    🌎 Official Studio
+                </h2>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35249906"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="img/OP.PNG"
+                        alt="Official Studio">
+
+                </a>
+
+
+                <p>
+                    Official Studio
+                </p>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35249906"
+                    class="studio-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ⭐ Visit Studio
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SPANISH STUDIO -->
+
+            <article class="studio">
+
+                <h2>
+                    🇪🇸 Estudio en español
+                </h2>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35213080"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="img/CapturaOPO.PNG"
+                        alt="Estudio en español">
+
+                </a>
+
+
+                <p>
+                    Estudio en español
+                </p>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35213080"
+                    class="studio-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ⭐ Visit Studio
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Elproleo597
+            | Made with ❤️ and Scratch
+        </p>
+
+    </footer>
+
+
 </body>
 
 </html>
