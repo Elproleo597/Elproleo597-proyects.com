@@ -1,43 +1,1094 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>EATPIZZA-MAN</title>
-<link rel="stylesheet" href="css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/s.webp">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EATPIZZA-MAN | Elproleo597</title>
+
+    <link rel="icon" href="img/s.webp">
+
+    <style>
+
+        /* =====================================
+           SCRATCH + PIZZA COLORS
+        ====================================== */
+
+        :root {
+
+            --scratch-orange: #f9a83a;
+            --scratch-orange-dark: #e89424;
+
+            --scratch-blue: #4c97ff;
+            --scratch-blue-dark: #3373cc;
+
+            --pizza-red: #e53935;
+            --pizza-red-dark: #b71c1c;
+
+            --pizza-yellow: #ffc107;
+
+            --background: #f4f4f4;
+
+            --white: #ffffff;
+
+            --text: #333333;
+            --text-light: #666666;
+
+        }
+
+
+        /* =====================================
+           GENERAL
+        ====================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f7f7,
+                    #eeeeee
+                );
+
+            color:
+                var(--text);
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================
+           HEADER
+        ====================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--scratch-orange),
+                    var(--scratch-orange-dark)
+                );
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.2);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 12px 20px;
+
+        }
+
+
+        /* =====================================
+           LOGO
+        ====================================== */
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: white;
+
+            text-shadow:
+                0 2px 2px
+                rgba(0,0,0,0.15);
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ====================================== */
+
+        .nav-links {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .nav-links a {
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 9px 12px;
+
+            border-radius: 8px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            background:
+                rgba(255,255,255,0.25);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================
+           MAIN
+        ====================================== */
+
+        main {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 55px 20px;
+
+        }
+
+
+        /* =====================================
+           HERO
+        ====================================== */
+
+        .hero {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 45px;
+
+            padding: 45px;
+
+            background:
+                white;
+
+            border-radius: 18px;
+
+            border-bottom:
+                7px solid
+                var(--pizza-red);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .hero-content {
+
+            flex: 1;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 7vw, 75px);
+
+            line-height: 1;
+
+            color:
+                var(--pizza-red);
+
+            text-shadow:
+                0 3px 0
+                var(--pizza-red-dark);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .pizza-subtitle {
+
+            font-size: 19px;
+
+            color:
+                var(--text-light);
+
+            max-width: 600px;
+
+        }
+
+
+        /* =====================================
+           PIZZA BADGE
+        ====================================== */
+
+        .pizza-badge {
+
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            padding: 6px 12px;
+
+            border-radius: 7px;
+
+            background:
+                #fff3cd;
+
+            color:
+                #9c7200;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =====================================
+           HERO IMAGE
+        ====================================== */
+
+        .hero-image {
+
+            flex: 0 0 400px;
+
+            text-align: center;
+
+        }
+
+
+        .hero-image img {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            border-radius: 15px;
+
+            border:
+                5px solid
+                var(--pizza-yellow);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,0.2);
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .hero-image img:hover {
+
+            transform:
+                scale(1.04)
+                rotate(1deg);
+
+        }
+
+
+        /* =====================================
+           TITLE
+        ====================================== */
+
+        .versions-title {
+
+            text-align: center;
+
+            margin-top: 55px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .versions-title h2 {
+
+            font-size: 35px;
+
+            color:
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .versions-title p {
+
+            color:
+                var(--text-light);
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           VERSION GRID
+        ====================================== */
+
+        .versions {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        /* =====================================
+           VERSION CARD
+        ====================================== */
+
+        .version-card {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border-left:
+                6px solid
+                var(--pizza-red);
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .version-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .version-number {
+
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            margin-bottom: 12px;
+
+            border-radius: 6px;
+
+            background:
+                #fff3cd;
+
+            color:
+                #9c7200;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+        }
+
+
+        .version-card h3 {
+
+            color:
+                var(--scratch-blue-dark);
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =====================================
+           PLAY BUTTON
+        ====================================== */
+
+        .play-button {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition:
+                0.15s;
+
+        }
+
+
+        .play-button:hover {
+
+            background:
+                #5fa4ff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .play-button:active {
+
+            transform:
+                translateY(2px);
+
+            box-shadow:
+                0 2px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        /* =====================================
+           LATEST VERSION
+        ====================================== */
+
+        .latest {
+
+            margin-top: 30px;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f0,
+                    #ffffff
+                );
+
+            border:
+                3px solid
+                var(--pizza-red);
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 7px 20px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .latest h2 {
+
+            color:
+                var(--pizza-red-dark);
+
+            margin-bottom: 10px;
+
+            font-size: 30px;
+
+        }
+
+
+        .latest p {
+
+            color:
+                var(--text-light);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ====================================== */
+
+        footer {
+
+            margin-top: 40px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                #e8e8e8;
+
+            border-top:
+                4px solid
+                var(--scratch-orange);
+
+            color:
+                #666666;
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .hero-image {
+
+                flex: none;
+
+                width: 100%;
+
+            }
+
+
+            .versions {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+
+                gap: 2px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+
+            }
+
+
+            .versions {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    30px 20px;
+
+            }
+
+
+            main {
+
+                padding:
+                    40px 15px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="Lomasnuevo.html">The newest</a></li>
-<li><a href="LaInvasionZOMBIE.html">The ZOMBIE Invasion</a></li>
-<li><a href="EATPIZZAMAN.html">EATPIZZA-MAN</a></li>
-<li><a href="Historias.html">Stories</a></li>
-<li><a href="Otrosproyectos.html">Other proyects</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>EATPIZZA-MAN</h1>
-<a href=https://scratch.mit.edu/projects/991803766>EATPIZZA-MAN 1.0</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/991805575>EATPIZZA-MAN 1.1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/991806304>EATPIZZA-MAN 1.1.1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/992087886>EATPIZZA-MAN 1.2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/992072789>EATPIZZA-MAN 1.2.2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/992648632>EATPIZZA-MAN 1.2.3</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/997230708>EATPIZZA-MAN 1.2.4</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1012777225>EATPIZZA-MAN 1.2.5</a>
-<p></p>
-<img src="img/EPM.PNG" alt="imagen principal">
-</main>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🎮 Elproleo597
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Lomasnuevo.html">
+                        The newest
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LaInvasionZOMBIE.html">
+                        🧟 ZOMBIE Invasion
+                    </a>
+                </li>
+
+                <li>
+                    <a href="EATPIZZAMAN.html">
+                        🍕 EATPIZZA-MAN
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Historias.html">
+                        📖 Stories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Otrosproyectos.html">
+                        🎮 Other projects
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="pizza-badge">
+                    🍕 PIZZA TIME!
+                </span>
+
+
+                <h1>
+                    EATPIZZA-MAN
+                </h1>
+
+
+                <p class="pizza-subtitle">
+
+                    Welcome to the complete
+                    <strong>EATPIZZA-MAN</strong>
+                    saga! Choose a version,
+                    enter the game and enjoy
+                    the adventure.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img
+                    src="img/EPM.PNG"
+                    alt="EATPIZZA-MAN">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TITLE -->
+
+        <section class="versions-title">
+
+            <h2>
+                🍕 EATPIZZA-MAN Versions
+            </h2>
+
+            <p>
+                Choose your favorite version and play!
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             VERSIONS
+        ================================== -->
+
+        <section class="versions">
+
+
+            <!-- 1.0 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.0
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.0
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/991803766"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.1 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.1
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.1
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/991805575"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.1.1 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.1.1
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.1.1
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/991806304"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/992087886"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2.2 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2.2
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.2.2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/992072789"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2.3 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2.3
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.2.3
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/992648632"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2.4 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2.4
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.2.4
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/997230708"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2.5 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2.5
+                </span>
+
+                <h3>
+                    EATPIZZA-MAN 1.2.5
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1012777225"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             LATEST VERSION
+        ================================== -->
+
+        <section class="latest">
+
+            <h2>
+                🍕 Latest Version
+            </h2>
+
+
+            <p>
+
+                You have reached the latest
+                version of EATPIZZA-MAN!
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Elproleo597
+            | Made with ❤️ and Scratch
+        </p>
+
+    </footer>
+
+
 </body>
 
 </html>
