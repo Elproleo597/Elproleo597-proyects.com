@@ -1,46 +1,1160 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Stories</title>
-<link rel="stylesheet" href="css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/s.webp">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Stories | Elproleo597</title>
+
+    <link rel="icon" href="img/s.webp">
+
+    <style>
+
+        /* =====================================
+           SCRATCH COLORS
+        ====================================== */
+
+        :root {
+
+            --scratch-orange: #f9a83a;
+            --scratch-orange-dark: #e89424;
+
+            --scratch-blue: #4c97ff;
+            --scratch-blue-dark: #3373cc;
+
+            --story-purple: #8e44ad;
+            --story-purple-dark: #6c3483;
+
+            --story-light: #f4eafa;
+
+            --background: #f4f4f4;
+
+            --white: #ffffff;
+
+            --text: #333333;
+            --text-light: #666666;
+
+        }
+
+
+        /* =====================================
+           GENERAL
+        ====================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f7f7,
+                    #eeeeee
+                );
+
+            color:
+                var(--text);
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================
+           HEADER
+        ====================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--scratch-orange),
+                    var(--scratch-orange-dark)
+                );
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.2);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 12px 20px;
+
+        }
+
+
+        /* =====================================
+           LOGO
+        ====================================== */
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: white;
+
+            text-shadow:
+                0 2px 2px
+                rgba(0,0,0,0.15);
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ====================================== */
+
+        .nav-links {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .nav-links a {
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 9px 12px;
+
+            border-radius: 8px;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            background:
+                rgba(255,255,255,0.25);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================
+           MAIN
+        ====================================== */
+
+        main {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 55px 20px;
+
+        }
+
+
+        /* =====================================
+           HERO
+        ====================================== */
+
+        .hero {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 45px;
+
+            padding: 45px;
+
+            background:
+                white;
+
+            border-radius: 18px;
+
+            border-bottom:
+                7px solid
+                var(--story-purple);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .hero-content {
+
+            flex: 1;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 7vw, 75px);
+
+            line-height: 1;
+
+            color:
+                var(--story-purple);
+
+            text-shadow:
+                0 3px 0
+                var(--story-purple-dark);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero-subtitle {
+
+            font-size: 19px;
+
+            color:
+                var(--text-light);
+
+            max-width: 600px;
+
+        }
+
+
+        /* =====================================
+           HERO ICON
+        ====================================== */
+
+        .hero-icon {
+
+            flex: 0 0 250px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 150px;
+
+            background:
+                var(--story-light);
+
+            border-radius: 25px;
+
+            padding: 25px;
+
+            border:
+                4px solid
+                var(--story-purple);
+
+        }
+
+
+        /* =====================================
+           STORY TITLE
+        ====================================== */
+
+        .stories-title {
+
+            text-align: center;
+
+            margin-top: 55px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .stories-title h2 {
+
+            font-size: 35px;
+
+            color:
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .stories-title p {
+
+            color:
+                var(--text-light);
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           STORY GRID
+        ====================================== */
+
+        .stories {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        /* =====================================
+           STORY CARD
+        ====================================== */
+
+        .story-card {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border-left:
+                6px solid
+                var(--story-purple);
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .story-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 11px 24px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .part {
+
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            margin-bottom: 12px;
+
+            border-radius: 6px;
+
+            background:
+                var(--story-light);
+
+            color:
+                var(--story-purple-dark);
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+        }
+
+
+        .story-card h3 {
+
+            color:
+                var(--scratch-blue-dark);
+
+            font-size: 20px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        /* =====================================
+           READ BUTTON
+        ====================================== */
+
+        .read-button {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition:
+                0.15s;
+
+        }
+
+
+        .read-button:hover {
+
+            background:
+                #5fa4ff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .read-button:active {
+
+            transform:
+                translateY(2px);
+
+            box-shadow:
+                0 2px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        /* =====================================
+           STUDIOS
+        ====================================== */
+
+        .studios {
+
+            margin-top: 55px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .studio {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            border-top:
+                6px solid
+                var(--scratch-orange);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .studio:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .studio h2 {
+
+            color:
+                var(--scratch-orange-dark);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .studio img {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            border-radius: 12px;
+
+            border:
+                4px solid
+                var(--scratch-blue);
+
+            margin-bottom: 15px;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .studio img:hover {
+
+            transform:
+                scale(1.03);
+
+        }
+
+
+        .studio p {
+
+            color:
+                var(--text-light);
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .studio-button {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition:
+                0.15s;
+
+        }
+
+
+        .studio-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            background:
+                #5fa4ff;
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ====================================== */
+
+        footer {
+
+            margin-top: 40px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                #e8e8e8;
+
+            border-top:
+                4px solid
+                var(--scratch-orange);
+
+            color:
+                #666666;
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .hero-icon {
+
+                flex: none;
+
+                width: 200px;
+
+                height: 200px;
+
+                font-size: 100px;
+
+            }
+
+
+            .stories {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .studios {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+
+                gap: 2px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+
+            }
+
+
+            .stories {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    30px 20px;
+
+            }
+
+
+            main {
+
+                padding:
+                    40px 15px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="Lomasnuevo.html">The newest</a></li>
-<li><a href="LaInvasionZOMBIE.html">The ZOMBIE Invasion</a></li>
-<li><a href="EATPIZZAMAN.html">EATPIZZA-MAN</a></li>
-<li><a href="Historias.html">Stories</a></li>
-<li><a href="Otrosproyectos.html">Other proyects</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>Stories</h1>
-<a href=https://scratch.mit.edu/projects/997286324>Historia de paìses parte1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/997315200>Historia de paìses parte2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/998770655>Historia de paìses parte3</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1028633356>Historia de paìses parte4</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1259710502>Historia de paìses parte5</a>
-<p></p>
-<a href=https://scratch.mit.edu/studios/35249818>
- <img src="img/H.PNG" alt="imagen principal">
-</a>
-<p>Estudio de Historias en español</p>
-<p></p>
-<a href=https://scratch.mit.edu/studios/51828583/>
- <img src="img/TSTS.png" alt="imagen principal">
-</a>
-<p>Official story study</p>
-</main>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🎮 Elproleo597
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Lomasnuevo.html">
+                        The newest
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LaInvasionZOMBIE.html">
+                        🧟 ZOMBIE Invasion
+                    </a>
+                </li>
+
+                <li>
+                    <a href="EATPIZZAMAN.html">
+                        🍕 EATPIZZA-MAN
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Historias.html">
+                        📖 Stories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Otrosproyectos.html">
+                        🎮 Other projects
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    📖 Stories
+                </h1>
+
+
+                <p class="hero-subtitle">
+
+                    Welcome to my collection of stories!
+                    Explore each part and discover
+                    my creations on Scratch.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-icon">
+
+                📚
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TITLE -->
+
+        <section class="stories-title">
+
+            <h2>
+                🌎 Historia de países
+            </h2>
+
+
+            <p>
+                Follow the story from Part 1 to Part 5!
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             STORIES
+        ================================== -->
+
+        <section class="stories">
+
+
+            <!-- PART 1 -->
+
+            <article class="story-card">
+
+                <span class="part">
+                    PART 1
+                </span>
+
+
+                <h3>
+                    Historia de países — Parte 1
+                </h3>
+
+
+                <a
+                    href="https://scratch.mit.edu/projects/997286324"
+                    class="read-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📖 Read
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PART 2 -->
+
+            <article class="story-card">
+
+                <span class="part">
+                    PART 2
+                </span>
+
+
+                <h3>
+                    Historia de países — Parte 2
+                </h3>
+
+
+                <a
+                    href="https://scratch.mit.edu/projects/997315200"
+                    class="read-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📖 Read
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PART 3 -->
+
+            <article class="story-card">
+
+                <span class="part">
+                    PART 3
+                </span>
+
+
+                <h3>
+                    Historia de países — Parte 3
+                </h3>
+
+
+                <a
+                    href="https://scratch.mit.edu/projects/998770655"
+                    class="read-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📖 Read
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PART 4 -->
+
+            <article class="story-card">
+
+                <span class="part">
+                    PART 4
+                </span>
+
+
+                <h3>
+                    Historia de países — Parte 4
+                </h3>
+
+
+                <a
+                    href="https://scratch.mit.edu/projects/1028633356"
+                    class="read-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📖 Read
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PART 5 -->
+
+            <article class="story-card">
+
+                <span class="part">
+                    PART 5
+                </span>
+
+
+                <h3>
+                    Historia de países — Parte 5
+                </h3>
+
+
+                <a
+                    href="https://scratch.mit.edu/projects/1259710502"
+                    class="read-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📖 Read
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STUDIOS
+        ================================== -->
+
+        <section class="stories-title">
+
+            <h2>
+                📚 Story Studios
+            </h2>
+
+
+            <p>
+                Visit the official studios for more stories.
+            </p>
+
+        </section>
+
+
+        <section class="studios">
+
+
+            <!-- SPANISH STUDIO -->
+
+            <article class="studio">
+
+                <h2>
+                    🇪🇸 Historias en español
+                </h2>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35249818"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="img/H.PNG"
+                        alt="Historias en español">
+
+                </a>
+
+
+                <p>
+                    Estudio de Historias en español
+                </p>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/35249818"
+                    class="studio-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📚 Visit Studio
+
+                </a>
+
+            </article>
+
+
+
+            <!-- OFFICIAL STORY STUDIO -->
+
+            <article class="studio">
+
+                <h2>
+                    🌎 Official Story Studio
+                </h2>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/51828583/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="img/TSTS.png"
+                        alt="Official Story Studio">
+
+                </a>
+
+
+                <p>
+                    Official story study
+                </p>
+
+
+                <a
+                    href="https://scratch.mit.edu/studios/51828583/"
+                    class="studio-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📚 Visit Studio
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Elproleo597
+            | Made with ❤️ and Scratch
+        </p>
+
+    </footer>
+
+
 </body>
 
 </html>
-
