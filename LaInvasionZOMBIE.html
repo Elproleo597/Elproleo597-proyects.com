@@ -1,52 +1,1174 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>The ZOMBIE Invasion</title>
-<link rel="stylesheet" href="css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/s.webp">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>The ZOMBIE Invasion | Elproleo597</title>
+
+    <link rel="icon" href="img/s.webp">
+
+    <style>
+
+        /* =====================================
+           SCRATCH COLORS
+        ====================================== */
+
+        :root {
+
+            --scratch-orange: #f9a83a;
+            --scratch-orange-dark: #e89424;
+
+            --scratch-blue: #4c97ff;
+            --scratch-blue-dark: #3373cc;
+
+            --zombie-green: #4caf50;
+            --zombie-green-dark: #388e3c;
+
+            --background: #f4f4f4;
+
+            --white: #ffffff;
+
+            --text: #333333;
+            --text-light: #666666;
+
+        }
+
+
+        /* =====================================
+           GENERAL
+        ====================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f7f7,
+                    #eeeeee
+                );
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================
+           HEADER
+        ====================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--scratch-orange),
+                    var(--scratch-orange-dark)
+                );
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.2);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 12px 20px;
+
+        }
+
+
+        /* =====================================
+           LOGO
+        ====================================== */
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: white;
+
+            text-shadow:
+                0 2px 2px rgba(0,0,0,0.15);
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ====================================== */
+
+        .nav-links {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .nav-links a {
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 9px 12px;
+
+            border-radius: 8px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            background:
+                rgba(255,255,255,0.25);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================
+           MAIN
+        ====================================== */
+
+        main {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 55px 20px;
+
+        }
+
+
+        /* =====================================
+           HERO
+        ====================================== */
+
+        .hero {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 45px;
+
+            padding: 45px;
+
+            background:
+                white;
+
+            border-radius: 18px;
+
+            border-bottom:
+                7px solid
+                var(--zombie-green);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .hero-content {
+
+            flex: 1;
+
+        }
+
+
+        .subtitle {
+
+            color:
+                var(--text-light);
+
+            font-size: 18px;
+
+            max-width: 600px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(42px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            color:
+                var(--zombie-green);
+
+            text-shadow:
+                0 2px 0
+                var(--zombie-green-dark);
+
+        }
+
+
+        .zombie-text {
+
+            color:
+                var(--scratch-orange);
+
+        }
+
+
+        /* =====================================
+           HERO IMAGE
+        ====================================== */
+
+        .hero-image {
+
+            flex: 0 0 400px;
+
+            text-align: center;
+
+        }
+
+
+        .hero-image img {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            border-radius: 15px;
+
+            border:
+                5px solid
+                var(--zombie-green);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,0.2);
+
+            transition: 0.3s;
+
+        }
+
+
+        .hero-image img:hover {
+
+            transform:
+                scale(1.03)
+                rotate(-1deg);
+
+        }
+
+
+        /* =====================================
+           SECTION TITLE
+        ====================================== */
+
+        .versions-title {
+
+            text-align: center;
+
+            margin-top: 55px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .versions-title h2 {
+
+            font-size: 35px;
+
+            color:
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .versions-title p {
+
+            color:
+                var(--text-light);
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           VERSION GRID
+        ====================================== */
+
+        .versions {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        /* =====================================
+           VERSION CARD
+        ====================================== */
+
+        .version-card {
+
+            background:
+                white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border-left:
+                6px solid
+                var(--zombie-green);
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+        }
+
+
+        .version-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(0,0,0,0.17);
+
+        }
+
+
+        .version-number {
+
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            margin-bottom: 12px;
+
+            border-radius: 6px;
+
+            background:
+                #e8f5e9;
+
+            color:
+                var(--zombie-green-dark);
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+        }
+
+
+        .version-card h3 {
+
+            color:
+                var(--scratch-blue-dark);
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =====================================
+           PLAY BUTTON
+        ====================================== */
+
+        .play-button {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background:
+                var(--scratch-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-blue-dark);
+
+            transition: 0.15s;
+
+        }
+
+
+        .play-button:hover {
+
+            background:
+                #5fa4ff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        .play-button:active {
+
+            transform:
+                translateY(2px);
+
+            box-shadow:
+                0 2px 0
+                var(--scratch-blue-dark);
+
+        }
+
+
+        /* =====================================
+           FINAL VERSION
+        ====================================== */
+
+        .final-version {
+
+            margin-top: 25px;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4df,
+                    #ffffff
+                );
+
+            border:
+                3px solid
+                var(--scratch-orange);
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 7px 20px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .final-version h2 {
+
+            color:
+                var(--scratch-orange-dark);
+
+            margin-bottom: 10px;
+
+            font-size: 30px;
+
+        }
+
+
+        .final-version p {
+
+            color:
+                var(--text-light);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .final-version .play-button {
+
+            background:
+                var(--scratch-orange);
+
+            box-shadow:
+                0 4px 0
+                var(--scratch-orange-dark);
+
+        }
+
+
+        .final-version .play-button:hover {
+
+            background:
+                #ffb84d;
+
+            box-shadow:
+                0 6px 0
+                var(--scratch-orange-dark);
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ====================================== */
+
+        footer {
+
+            margin-top: 40px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                #e8e8e8;
+
+            border-top:
+                4px solid
+                var(--scratch-orange);
+
+            color:
+                #666666;
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .hero-image {
+
+                flex: none;
+
+                width: 100%;
+
+            }
+
+
+            .versions {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+
+                gap: 2px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+
+            }
+
+
+            .hero {
+
+                padding: 30px 20px;
+
+            }
+
+
+            .versions {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            main {
+
+                padding:
+                    40px 15px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="Lomasnuevo.html">The newest</a></li>
-<li><a href="LaInvasionZOMBIE.html">The ZOMBIE Invasion</a></li>
-<li><a href="EATPIZZAMAN.html">EATPIZZA-MAN</a></li>
-<li><a href="Historias.html">Stories</a></li>
-<li><a href="Otrosproyectos.html">Other proyects</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>The ZOMBIE Invasion</h1>
-<a href=https://scratch.mit.edu/projects/993810209>The ZOMBIE Invasion 1.0</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/991809724>The ZOMBIE Invasion 1.1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/991465221>The ZOMBIE Invasion 1.2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1004950973>The ZOMBIE Invasion 1.3</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1020751892>The ZOMBIE Invasion 1.4</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1027213840>The ZOMBIE Invasion 1.5</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1040436788>The ZOMBIE Invasion 1.6 part 1</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1045832771>The ZOMBIE Invasion 1.6 part 2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1053990060>The ZOMBIE Invasion 1.7.2</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1109300097>The ZOMBIE Invasion 1.8</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1114170016>The ZOMBIE Invasion 1.9</a>
-<p></p>
-<a href=https://scratch.mit.edu/projects/1365613449>The ZOMBIE Invasion 2.0</a>
-<p></p>
-<img src="img/TZI.PNG" alt="imagen principal">
-</main>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🎮 Elproleo597
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Lomasnuevo.html">
+                        The newest
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LaInvasionZOMBIE.html">
+                        🧟 ZOMBIE Invasion
+                    </a>
+                </li>
+
+                <li>
+                    <a href="EATPIZZAMAN.html">
+                        🍕 EATPIZZA-MAN
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Historias.html">
+                        📖 Stories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Otrosproyectos.html">
+                        🎮 Other projects
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    🧟 The
+                    <span class="zombie-text">
+                        ZOMBIE
+                    </span>
+                    Invasion
+                </h1>
+
+
+                <p class="subtitle">
+
+                    Enter the complete saga of
+                    <strong>The ZOMBIE Invasion</strong>
+                    and play every version of the game!
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img
+                    src="img/TZI.PNG"
+                    alt="The ZOMBIE Invasion">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TITLE -->
+
+        <section class="versions-title">
+
+            <h2>
+                🧟 The Complete Saga
+            </h2>
+
+            <p>
+                Choose a version and start playing!
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             VERSIONS
+        ================================== -->
+
+        <section class="versions">
+
+
+            <!-- 1.0 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.0
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.0
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/993810209"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.1 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.1
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.1
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/991809724"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.2 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.2
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/991465221"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.3 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.3
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.3
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1004950973"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.4 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.4
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.4
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1020751892"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.5 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.5
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.5
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1027213840"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.6 PART 1 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.6
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.6 Part 1
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1040436788"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.6 PART 2 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.6
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.6 Part 2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1045832771"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.7.2 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.7.2
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.7.2
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1053990060"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.8 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.8
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.8
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1109300097"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 1.9 -->
+
+            <article class="version-card">
+
+                <span class="version-number">
+                    VERSION 1.9
+                </span>
+
+                <h3>
+                    The ZOMBIE Invasion 1.9
+                </h3>
+
+                <a
+                    href="https://scratch.mit.edu/projects/1114170016"
+                    class="play-button"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    🎮 Play
+
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             VERSION 2.0
+        ================================== -->
+
+        <section class="final-version">
+
+            <h2>
+                ⭐ The ZOMBIE Invasion 2.0
+            </h2>
+
+
+            <p>
+                The latest version of the saga!
+                Are you ready for the invasion?
+            </p>
+
+
+            <a
+                href="https://scratch.mit.edu/projects/1365613449"
+                class="play-button"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                🧟 PLAY VERSION 2.0
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Elproleo597
+            | Made with ❤️ and Scratch
+        </p>
+
+    </footer>
+
+
 </body>
 
 </html>
-
